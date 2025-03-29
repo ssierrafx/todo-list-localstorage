@@ -32,3 +32,17 @@ h1, h2 {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+.button-secondary:focus,
+.button-secondary {
+    color: #FFF;
+    background-color: #fd443e;
+    border-color: #fd443e;
+}
+
+.button-secondary:hover {
+    color: #FFF;
+    background-color: #c7312c;
+    border-color: #c7312c;
+}
+

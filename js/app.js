@@ -1,6 +1,7 @@
 // variables
 const formulario = document.querySelector('#formulario');
 const lista = document.querySelector('#lista-tweets');
+const btnLimpiar = document.querySelector('#limpiar')
 let tareas = [];
 
 // Even listener
@@ -9,6 +10,8 @@ eventListeners();
 function eventListeners(){
 
     formulario.addEventListener('submit', agregarTarea);
+
+    btnLimpiar.addEventListener('click', limpiarTareas);
 
     document.addEventListener('DOMContentLoaded', () => {
         // recoge los valores del localStorage, los transforma a array y los almacena en tareas nuevamente
@@ -43,6 +46,15 @@ function agregarTarea(e){
     crearHTML();
 
     formulario.reset();
+}
+
+function limpiarTareas(e){
+    e.preventDefault();
+   
+    if (confirm('¿Estás seguro de que deseas eliminar todas las tareas?') && tareas.length > 0){
+        tareas = [];
+        crearHTML();
+    }
 }
 
 function mostrarError(error){
